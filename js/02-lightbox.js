@@ -11,16 +11,16 @@ const markup = galleryItems.map(({preview, original, description}) =>
 list.insertAdjacentHTML("beforeend", markup)
 console.log(galleryItems);
 
-list.addEventListener("click", onPictureClick);
+// list.addEventListener("click", onPictureClick);
 
-function onPictureClick (evt) {
-  evt.preventDefault();
-  if(evt.target === evt.currentTarget){
-      return;}
+// function onPictureClick (evt) {
+//   evt.preventDefault();
+//   if(evt.target === evt.currentTarget){
+//       return;}
   
     new SimpleLightbox (".gallery a", {
         captionsData: "alt", 
         captionDelay: 250
     }
 );    
-  }
+  // }

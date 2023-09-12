@@ -33,15 +33,24 @@ const instance = basicLightbox.create(`<div class = "modal">
       src="${originalImg}"
       width="1000"
     />
-</div>`);
+</div>`,
+{
+  onShow: () => document.addEventListener("keydown", onHandleKeyDown),
+  onClose: () => document.removeEventListener("keydown", onHandleKeyDown),
+});
 instance.show();
 
-document.addEventListener("keydown", onHandleKeyDown);
+// document.addEventListener("keydown", onHandleKeyDown);
+// document.removeEventListener("keydown", onHandleKeyDown);
 
 function onHandleKeyDown(evt) {
   if (evt.code === "Escape") { 
     instance.close();}
 }
 
-};
 
+};
+// instance.show()
+// instance.show(() => console.log('lightbox now visible'))
+// instance.close()
+// instance.close(() => console.log('lightbox not visible anymore'))
